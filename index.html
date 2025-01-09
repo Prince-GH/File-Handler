@@ -3,59 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download My Windows App</title>
+    <title>File Handler - Download</title>
+    <!-- Link to Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: "Afacad Flux", serif;
         }
 
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
+            color: #333;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
-            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 15px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            height: 40px;
         }
 
         .container {
-            background-color: #fff;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 600px;
         }
 
-        header {
-            margin-bottom: 20px;
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
+            margin-bottom: 15px;
             color: #333;
         }
 
         p {
             font-size: 1.2em;
             color: #666;
+            margin-bottom: 20px;
         }
 
+        ul {
+            
+            list-style: none;
+          
+        }
         .download-section {
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .download-button {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 15px 40px;
             font-size: 1.2em;
             background-color: #4CAF50;
-            color: #fff;
+            color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease;
         }
 
@@ -64,26 +103,66 @@
         }
 
         footer {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #aaa;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .github-icon {
+            font-size: 1.5em;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Welcome to My Windows App</h1>
-            <p>Click below to download and install the app.</p>
-        </header>
 
-        <div class="download-section">
-            <a href="path/to/your/setup.exe" class="download-button" download>Download Now</a>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2 style="font-size:30px; color: white;">📁FileHandler
+        </h2>
+        <div>
+            <a href="#">Home</a>
+            <a href="https://github.com/prince-GH/File-Handler" target="_blank">GitHub</a>
         </div>
-
-        <footer>
-            <p>© 2025 My App. All rights reserved.</p>
-        </footer>
     </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            <header>
+                <h1>Welcome to File Handler</h1>
+                <p>Your all-in-one solution to manage and handle files efficiently. With our app, you can:</p>
+                <ul>
+                    <li>Organize and categorize your files effortlessly</li>
+                    <li>Search, update, and edit your files</li>
+                </ul>
+                <p>Click below to download and get started with the app!</p>
+            </header>
+
+            <div class="download-section">
+                <a href="https://github.com/Prince-GH/File-Handler/releases/download/v2.0/File.Handlers.msi" class="download-button" download>
+                    Download Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 <a href="https://github.com/prince-GH/File-Handler" target="_blank">File Handler</a>. All rights reserved. <span class="github-icon"><i class="fab fa-github"></i></span></p>
+    </footer>
+
 </body>
 </html>
