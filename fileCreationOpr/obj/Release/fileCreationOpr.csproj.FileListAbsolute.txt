@@ -1,0 +1,10 @@
+C:\Programming2024\C_sharp\fileCreationOpr\fileCreationOpr\bin\Release\fileCreationOpr.exe.config
+C:\Programming2024\C_sharp\fileCreationOpr\fileCreationOpr\bin\Release\fileCreationOpr.exe
+C:\Programming2024\C_sharp\fileCreationOpr\fileCreationOpr\bin\Release\fileCreationOpr.pdb
+C:\Programming2024\C_sharp\fileCreationOpr\fileCreationOpr\obj\Release\fileCreationOpr.csproj.AssemblyReference.cache
+C:\Programming2024\C_sharp\fileCreationOpr\fileCreationOpr\obj\Release\fileCreationOpr.FileHandler.resources
+C:\Programming2024\C_sharp\fileCreationOpr\fileCreationOpr\obj\Release\fileCreationOpr.Properties.Resources.resources
+C:\Programming2024\C_sharp\fileCreationOpr\fileCreationOpr\obj\Release\fileCreationOpr.csproj.GenerateResource.cache
+C:\Programming2024\C_sharp\fileCreationOpr\fileCreationOpr\obj\Release\fileCreationOpr.csproj.CoreCompileInputs.cache
+C:\Programming2024\C_sharp\fileCreationOpr\fileCreationOpr\obj\Release\fileCreationOpr.exe
+C:\Programming2024\C_sharp\fileCreationOpr\fileCreationOpr\obj\Release\fileCreationOpr.pdb
