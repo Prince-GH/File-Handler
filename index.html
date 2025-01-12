@@ -3,166 +3,619 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Handler - Download</title>
-    <!-- Link to Font Awesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>File Handler</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+        /* General reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Afacad Flux", serif;
+            font-family: "Open Sans", serif;
         }
-
+        
+        /* Common Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+        }
+
+        /* Page 1 Styles */
+        .page1 {
+            height: 100vh;
+            width: 100%;
+            background-color: #202124;
+            color: #FFFFFF;
+            text-align: center;
+            padding-top: 80px;
+            & .logo{
+                display: flex;
+                gap: 15px;
+                align-items: center;
+            }
+        }
+        .page1 nav{
+            width: 100%;
+            height: 60px;
+            backdrop-filter: blur(5px); /* blur effect */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            position:fixed;
+            top: 0px;
+            text-align: left;
+            padding-top:10px;
+            padding-left: 15px;
+
+            & h1{
+                font-size: 25px;
+            }
+        }
+        .page1 .m {
+            font-size: 48px;
+            /* position: relative; */
+            /* color: red; */
+            /* background: black; */
+            padding-top:60px;
+            & i{
+                font-family: "Rubik Glitch", serif;
+                font-weight:lighter;
+                font-size: 75px;
+                background: linear-gradient(90deg, #afd3ff, #0056b3); /* Define the gradient colors */
+                 -webkit-background-clip: text;
+                 -webkit-text-fill-color: transparent;
+                  background-clip: text; /* Optional for non-webkit browsers */
+                  animation: speed 0.5ms infinite linear;
+            }
+        }
+        @keyframes speed {
+            0%{                          
+               margin-left:0px; 
+             }100%{
+                margin-left:5.9px; 
+            }
+        }
+        .page1 span {
+            display: block;
+            font-size: 20px;
+            padding-top: 50px;
+            font-family: "Open Sans", serif;
+        }
+        .download-btn {
+            width: 255.56px;
+            height: 64px;
+            background-color: #1A73E8;
+            color: #FFFFFF;
+            font-size: 18px;
+            padding: 0px 32px;
+            
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            & i{
+                margin-right:8px;
+            }
+        }
+        
+        .download-btn:hover{
+            background-color: #216bbb;
+        }
+        .page1 p {
+            font-size: 12px;
+            color: #767c6b;
+            margin-top: 30px;
+            font-family: "Open Sans", serif;
+        }
+
+        /* Page 2 Styles */
+        .page2 {
+            height: 100vh;
+            width: 100%;
+            color: #FFFFFF;
+            background-color:#202124;
+            text-align: center;
+            
+        }
+        .page2 h2 {
+            animation: headding 1s both;
+            animation-timeline: view();
+            font-size: 60px;
+            margin-bottom: 50px;
+            font-family: "Open Sans", serif;
+        }
+        .page2 img {
+            width: 891px;
+            height: 514.8px;
+            border-radius: 15px;
+        }
+
+        @keyframes headding {
+            0%{
+              opacity: 0;
+              scale: 0.8;
+              background: linear-gradient(90deg, #568ed3, #0056b3); /* Define the gradient colors */
+                 -webkit-background-clip: text;
+                 -webkit-text-fill-color: transparent;
+                  background-clip: text; /* Optional for non-webkit browsers */
+
+            }99%{
+              opacity: 1;
+              scale: 1;
+              background: linear-gradient(90deg, #afd3ff, #0056b3); /* Define the gradient colors */
+                 -webkit-background-clip: text;
+                 -webkit-text-fill-color: transparent;
+                  background-clip: text; /* Optional for non-webkit browsers */
+
+            }
+        }
+
+        /* Page 3 Styles */
+        .page3 {
+            height: 100vh;
+            width: 100%;
+            text-align: center;
+            padding-top: 80px;
+            background: #202124;
+        }
+        .page3 h1 {
+            animation: headding 1s both;
+            animation-timeline: view();
+            font-size: 60px;
+            color: #FFFFFF;
+            padding-bottom:30px;
+
+        }
+        .page3 img {
+            width: 50%;
+            border-radius: 15px;
+        }
+        .control-bar-info {
+            color: #707070;
+            /* background: red; */
+            /* border-radius: 15px; */
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bolder;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .navbar {
-            background-color: #333;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-            margin: 0 15px;
+    
+        /* Page 4 Styles */
+        .page4 {
+            height: 100vh;
+            width: 100%;
+            background: #202124;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
         }
-
-        .navbar a:hover {
-            text-decoration: underline;
+        .page4 h1 {
+            animation: headding 1s both;
+            animation-timeline: view();
+            font-size: 60px;
+            color: #FFFFFF;
+            margin-bottom: 20px;
         }
-
-        .logo {
-            height: 40px;
-        }
-
-        .container {
-            flex: 1;
+        .navbar-container {
+            animation: cont 1s both;
+            animation-timeline: view();
+            /* background: red; */
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 20px;
+            /* margin-top: 40px; */
+            gap:50px;
         }
-
-        .content {
-            background-color: white;
-            padding: 30px;
+        @keyframes cont {
+            0%{
+                opacity: 0;
+                gap:500px
+            }
+           
+            50%{
+                opacity: 1;
+                gap:50px;
+            }
+        }
+        .navbar-container .image img {
+            border-radius: 15px;
+        }
+        .navbar-container  .info {
+            background-color:#111111;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
             max-width: 800px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.6;
+            transition: box-shadow 0.3s ease-in-out;
         }
 
-        h1 {
-            font-size: 2.5em;
+        .info:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .info p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .navbar-info {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-info li {
             margin-bottom: 15px;
-            color: #333;
+            background-color: #17181a;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        p {
-            font-size: 1.2em;
-            color: #666;
+        .navbar-info li:hover {
+            background-color: #17181a;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-info li strong {
+            color: #0056b3;
+            font-weight:bold;
+        }
+      
+
+        /* Page 5 Styles */
+        .page5 {
+            height: 100vh;
+            width: 100%;
+            background: #202124;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+        .page5 h1 {
+            animation: headding 1s both;
+            animation-timeline: view();
+            font-size: 60px;
+            color:#FFFFFF;
+            margin-top: 50px;
             margin-bottom: 20px;
         }
+        .page5 img {
+            /* width: 100%; */
+            border-radius: 15px;
+        }
+       
 
-        ul {
+        /* Page 6 Styles */
+        .page6 {
+            height: 100vh;
+            width: 100%;
+            background: #202124;
+            display: flex;
+            justify-content:center;
+            gap: 100px;
+            align-items: center;
+            flex-direction: column;
+            /* background-color: #0056b3; */
+        }
+        .page6 h2 {
+            animation: headding 1s both;
+            animation-timeline: view();
+            font-size: 48px;
+            color: #ffffff;
+            /* background-color: red; */
+        }
+        .faq-container {
+            /* background-color: green; */
+            width: 80%;
+            margin: 0 auto;
             
-            list-style: none;
-          
         }
-        .download-section {
-            margin-top: 30px;
+        .faq-container h3 {
+            font-size: 28px;
+            color: #ffffff;
+            padding: 20px 0px 32px;
+            font-weight: bold;
+            
         }
-
-        .download-button {
-            display: inline-block;
-            padding: 15px 40px;
-            font-size: 1.2em;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
+        .faq-container p {
+            font-size: 19px;
+            color: #dbdbdb;
+            padding-left:50px;
         }
-
-        .download-button:hover {
-            background-color: #45a049;
+        .faq-container .question{
+            position: relative;
+            cursor: pointer;
         }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 30px;
+        .faq-container .question .answer{
+            /* background: rebeccapurple; */
+            position:absolute;
+            bottom:30px;
+            opacity: 0;
+            transition: opacity 0.5s ease, bottom 0.5s ease;
         }
-
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2em;
+       
+         
+        .faq-container .question:hover{ 
+            h3{
+                 background: linear-gradient(90deg, #afd3ff, #0056b3); /* Define the gradient colors */
+                 -webkit-background-clip: text;
+                 -webkit-text-fill-color: transparent;
+                  background-clip: text; /* Optional for non-webkit browsers */
+            }
+            .answer{
+                opacity: 1;
+                bottom: 0px;
         }
-
-        footer a:hover {
-            text-decoration: underline;
         }
 
-        .github-icon {
-            font-size: 1.5em;
-            color: #333;
+        /* footer */
+        footer{
+            /* position: relative; */
+            height:20vh;
+            width: 100%;
+            padding: 20px;
+            
+            & .social-links{
+                /* background-color: #0056b3; */
+                font-size: 20px;
+                display: flex;
+                gap:10px;
+                & a{
+                    text-decoration: none;
+                    & i{
+                        color: rgb(0, 0, 0);
+                        font-size:25px;
+                        
+                    }
+                }
+            }
+            & .social-links a:hover{
+                i{
+                    color:#525252;
+                }
+            }
+            & .credits{
+                /* background-color: pink; */
+                color: black;
+                font-weight: bold;
+                text-align: center;
+                & a{
+                    text-decoration: none;
+                    color:#0056b3;
+                    font-weight: bold;
+                }
+            }
         }
+    /* Responsive Design */
+@media (max-width: 1200px) {
+    .page2 img, .page3 img, .page4 .navbar-container .image img, .page5 img {
+        width: 75%;
+        height: auto;
+    }
+   
+    .navbar-container {
+        .info{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .page1 .m i {
+        font-size: 60px;
+    }
+    .download-btn {
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+    }
+    .page2 h2, .page3 h1, .page4 h1, .page5 h1 {
+        font-size: 48px;
+    }
+   
+}
+
+@media (max-width: 768px) {
+    .page2 img, .page3 img, .page4 .navbar-container .image img, .page5 img {
+        width: 90%;
+    }
+    .page2 h2, .page3 h1, .page4 h1, .page5 h1 {
+        font-size: 36px;
+    }
+    .download-btn {
+        width: 180px;
+        height: 40px;
+        font-size: 14px;
+    }
+    .faq-container h3 {
+        font-size: 24px;
+    }
+    .faq-container p {
+        font-size: 16px;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    .page1 .m i {
+        font-size: 48px;
+    }
+   
+    .page2 h2, .page3 h1, .page4 h1, .page5 h1 {
+        font-size: 28px;
+    }
+    .download-btn {
+        width: 160px;
+        height: 40px;
+        font-size: 12px;
+    }
+    footer .social-links i {
+        font-size: 20px;
+    }
+}
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <h2 style="font-size:30px; color: white;">📁FileHandler
-        </h2>
-        <div>
-            <a href="#">Home</a>
-            <a href="https://github.com/prince-GH/File-Handler" target="_blank">GitHub</a>
+<!-- Page 1 -->
+<div class="page1">
+    <nav id="navbartop">
+        <div class="logo">
+            <img src="media/readmeMedia/bookshelf.png" style="width: 2rem;" alt="📂">
+            <h1>File Handler</h1>
+        </div>
+    </nav>
+
+    <h1 class="m">The File Handler <br> built to be <i>faster</i><br> file manager</h1>
+    <button class="download-btn" onclick="window.location.href='https://github.com/Prince-GH/File-Handler/releases/download/v2.0/File.Handlers.msi'">
+        <i class="fa-solid fa-download"></i>
+        Download Now</button>
+    <span>Powerful and easy-to-use file management for Windows.</span>
+    <p>For Windows 11/10 (64/32 bit)</p>
+</div>
+
+<!-- Page 2 -->
+<div class="page2">
+    <h2>Fast way to create file and dir</h2>
+    <img src="media/readmeMedia/fh01.jpg" alt="Create File and Directory">
+</div>
+
+<!-- Page 3 -->
+<div class="page3">
+    <h1>Create, Update, Delete <br> Full Control of Your Files & Path</h1>
+    <img src="media/readmeMedia/fh02_controlBar.jpg" alt="Control Bar">
+    <div class="control-bar-info">
+        <p>The Control Bar provides quick access to essential file operations and system information</p>
+     
+    </div>
+</div>
+
+<!-- Page 4 -->
+<div class="page4">
+    <h1>Super Fast Navigation Bar</h1>
+    <div class="navbar-container">
+        <div class="image">
+            <img src="media/readmeMedia/fh03_navbar.jpg" alt="Navbar">
+        </div>
+        <div class="info">
+            <p>The Navigation Bar simplifies file and folder exploration:</p>
+            <ul class="navbar-info">
+                <li><strong>Current Path:</strong> Displays the location of the selected file or folder.</li>
+                <li><strong>Drives:</strong> List of available drives for navigation.</li>
+                <li><strong>Directory:</strong> Shows the folder structure within the current path.</li>
+                <li><strong>Previous:</strong> Navigate back to the previous directory.</li>
+                <li><strong>File/Folder List:</strong> Displays files and folders in the selected directory for quick access.</li>
+            </ul>
         </div>
     </div>
+</div>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="content">
-            <header>
-                <h1>Welcome to File Handler</h1>
-                <p>Your all-in-one solution to manage and handle files efficiently. With our app, you can:</p>
-                <ul>
-                    <li>Organize and categorize your files effortlessly</li>
-                    <li>Search, update, and edit your files</li>
-                </ul>
-                <p>Click below to download and get started with the app!</p>
-            </header>
+<!-- Page 5 -->
+<div class="page5">
+    <h1>Effortless Editor</h1>
+    <img src="media/readmeMedia/fh04_editor.jpg" alt="Editor">
+   
+</div>
 
-            <div class="download-section">
-                <a href="https://github.com/Prince-GH/File-Handler/releases/download/v2.0/File.Handlers.msi" class="download-button" download>
-                    Download Now
-                </a>
+<!-- Page 6 -->
+<div class="page6">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="question">
+            <h3>Q. How do I download the File Handler?</h3>
+            <div class="answer">
+                <p>You can download it from the link on the website page.</p>
+            </div>
+        </div>
+        <div class="question">
+            <h3>Q. How do I create a new file or directory?</h3>
+            <div class="answer">
+                <p>Use the Control Bar to input a name and choose the file or folder option.</p>
+            </div>
+        </div>
+        <div class="question">
+            <h3>Q. How do I edit a file?</h3>
+            <div class="answer">
+                <p>Use the Editor to modify the contents of any file and save your changes.</p>
+            </div>
+        </div>
+        <div class="question">
+            <h3>Q. How do I delete files or folders?</h3>
+            <div class="answer">
+                <p>Select the item and use the Delete option in the Control Bar.</p>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 <a href="https://github.com/prince-GH/File-Handler" target="_blank">File Handler</a>. All rights reserved. <span class="github-icon"><i class="fab fa-github"></i></span></p>
-    </footer>
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+       
+        <div class="social-links">
+            <a href="https://github.com/Prince-GH">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/prince-ld/">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:prince.commit@gmail.com?subject=Feedback%20on%20File%20Handler&body=%0A%0AHello%20Team%2C%0A%0AI%20am%20writing%20to%20provide%20feedback%20on%20the%20File%20Handler%20application.%20Please%20find%20my%20details%20below.%0A%0AYOUR%20NAME%3A%0A%0AFEEDBACK%3A%0A%0ACOUNTRY%3A%0A%0ASTATE%3A%0A%0ATIME%20ZONE%3A%0A%0AQUERY%20OR%20SUGGESTIONS%20(if%20any)%3A%0A%0A%0ARegards%0A%0A[Your%20Name]">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            
+            
+            
+    
+        </div>
+        <div class="credits">
+            <p>
+                <i class="fa-regular fa-copyright"></i>
+                2025 
+                <a href="https://github.com/Prince-GH/File-Handler">File Handler</a>. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
+<script>
+ let lastScrollTop = 0; // Store the last scroll position
+
+// Add event listener for the window scroll event
+window.addEventListener('scroll', () => {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Calculate the opacity based on the scroll position
+  let opacity = Math.min(1, (currentScroll / 500)); // Adjust '500' for how quickly opacity changes
+
+  if (currentScroll > lastScrollTop) {
+      // If the user is scrolling down, decrease opacity
+      document.getElementById('navbartop').style.opacity = 1 - opacity;
+  } else {
+      // If the user is scrolling up, increase opacity
+      document.getElementById('navbartop').style.opacity = 1;
+      
+  }
+
+  // Update the last scroll position
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll value
+});
+
+//,,,,,,,,,,,,,,,
+
+
+</script>
 </body>
 </html>
