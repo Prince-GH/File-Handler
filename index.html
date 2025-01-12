@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="File Handler is a fast and powerful file management tool for Windows 10/11 that allows users to easily create, edit, delete, and navigate through files and directories. The app offers effortless file management, with an editor, a control bar, and quick navigation features.">
+    <meta name="keywords"
+        content="File Handler, file manager, file editor, directory management, file creation, delete file, file operations, file navigation, GitHub project, Windows 10, Windows 11">
+    <meta name="author" content="Prince-GH">
+
+    <link rel="icon" href="media/readmeMedia/bookshelf.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,7 +20,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
 
-        /* General reset */
+        /* General */
         * {
             margin: 0;
             padding: 0;
@@ -46,9 +54,7 @@
             width: 100%;
             height: 60px;
             backdrop-filter: blur(5px);
-            /* blur effect */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
             position: fixed;
             top: 0px;
             text-align: left;
@@ -72,11 +78,9 @@
                 font-weight: lighter;
                 font-size: 75px;
                 background: linear-gradient(90deg, #afd3ff, #0056b3);
-                /* Define the gradient colors */
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
-                /* Optional for non-webkit browsers */
                 animation: speed 0.5ms infinite linear;
             }
         }
@@ -136,7 +140,6 @@
             color: #FFFFFF;
             background-color: #202124;
             text-align: center;
-
         }
 
         .page2 h2 {
@@ -158,24 +161,18 @@
                 opacity: 0;
                 scale: 0.8;
                 background: linear-gradient(90deg, #568ed3, #0056b3);
-                /* Define the gradient colors */
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
-                /* Optional for non-webkit browsers */
-
             }
 
             99% {
                 opacity: 1;
                 scale: 1;
                 background: linear-gradient(90deg, #afd3ff, #0056b3);
-                /* Define the gradient colors */
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
-                /* Optional for non-webkit browsers */
-
             }
         }
 
@@ -403,11 +400,9 @@
         .faq-container .question:hover {
             h3 {
                 background: linear-gradient(90deg, #afd3ff, #0056b3);
-                /* Define the gradient colors */
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
-                /* Optional for non-webkit browsers */
             }
 
             .answer {
@@ -665,10 +660,6 @@
                     href="mailto:prince.commit@gmail.com?subject=Feedback%20on%20File%20Handler&body=%0A%0AHello%20Team%2C%0A%0AI%20am%20writing%20to%20provide%20feedback%20on%20the%20File%20Handler%20application.%20Please%20find%20my%20details%20below.%0A%0AYOUR%20NAME%3A%0A%0AFEEDBACK%3A%0A%0ACOUNTRY%3A%0A%0ASTATE%3A%0A%0ATIME%20ZONE%3A%0A%0AQUERY%20OR%20SUGGESTIONS%20(if%20any)%3A%0A%0A%0ARegards%0A%0A[Your%20Name]">
                     <i class="fa-solid fa-envelope" style="color:rgb(255, 244, 244);"></i>
                 </a>
-
-
-
-
             </div>
             <div class="credits">
                 <p style="color: white;">
@@ -681,31 +672,18 @@
     </footer>
 
     <script>
-        let lastScrollTop = 0; // Store the last scroll position
-
-        // Add event listener for the window scroll event
+        let lastScrollTop = 0; 
+        
         window.addEventListener('scroll', () => {
             let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            // Calculate the opacity based on the scroll position
-            let opacity = Math.min(1, (currentScroll / 500)); // Adjust '500' for how quickly opacity changes
-
+            let opacity = Math.min(1, (currentScroll / 500)); 
             if (currentScroll > lastScrollTop) {
-                // If the user is scrolling down, decrease opacity
                 document.getElementById('navbartop').style.opacity = 1 - opacity;
             } else {
-                // If the user is scrolling up, increase opacity
                 document.getElementById('navbartop').style.opacity = 1;
-
             }
-
-            // Update the last scroll position
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll value
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; 
         });
-
-        //,,,,,,,,,,,,,,,
-
-
     </script>
 </body>
 
