@@ -26,6 +26,7 @@ This tool is designed to enhance file management interactivity and help users ke
 - **Delete**: Remove selected files or folders.
 - **Show Present Working Directory**: View the active directory location.
 <br>
+
 ## **2. Navigation Bar**
 <img src="media/readmeMedia/fh03_navbar.jpg">
 
@@ -37,18 +38,20 @@ This tool is designed to enhance file management interactivity and help users ke
 - **Directory**: Shows the folder structure within the current path.
 - **Previous**: Navigate back to the previous directory.
 - **File/Folder List**: Displays files and folders in the selected directory for quick access.
+
 <br>
+
 ## **3. Editor**
 <img src="media/readmeMedia/fh04_editor.jpg">
 
 **The Editor is where you can view and modify file contents:**
-
 <br>
-
 - **Copy**: Quickly copy the text from the editor to the clipboard.
 - **Editor**: View or edit the contents of the selected file.
 - **Clear**: Remove all text from the editor to start fresh.
+
 <br>
+
 ## What's New in v2.0  
 - **Folder**: User can create folder also. 
 - **Installer Available**: You can now install the application directly on your system.  
